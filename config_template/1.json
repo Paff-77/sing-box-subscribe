@@ -305,7 +305,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["🇺🇸|us|美国|美|United States"]}
+        {"action":"include","keywords":["🇺🇸|USA| US |us|美国|美|United States"]}
       ]
     },
     {
@@ -315,7 +315,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"exclude","keywords":["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"]}
+        {"action":"exclude","keywords":["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|USA| US |us|美国|美"]}
       ]
     },
     {
@@ -338,7 +338,6 @@
       "tag": "♻️ auto",
       "type": "urltest",
       "outbounds":[
-        "🚀 proxy",
         "{all}"
       ],
       "filter":[
