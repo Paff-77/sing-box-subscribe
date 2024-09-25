@@ -305,7 +305,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["🇺🇸|US|us|美国|美|United States"]}
+        {"action":"include","keywords":["🇺🇸|us|美国|美|United States"]}
       ]
     },
     {
