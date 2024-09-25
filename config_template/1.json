@@ -338,6 +338,7 @@
       "tag": "♻️ auto",
       "type": "urltest",
       "outbounds":[
+        "🚀 proxy",
         "{all}"
       ],
       "filter":[
