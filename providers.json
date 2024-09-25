@@ -20,7 +20,7 @@
         }
     ],
     "auto_set_outbounds_dns":{
-        "proxy": "",
+        "proxy": "🚀 proxy",
         "direct": ""
     },
     "save_config_path": "./config.json",
