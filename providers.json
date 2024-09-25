@@ -4,10 +4,10 @@
             "url": "URL",
             "tag": "tag_1",
             "enabled": true,
-            "emoji": 1,
+            "emoji": 0,
             "subgroup": "",
             "prefix": "",
-            "User-Agent":"v2rayng"
+            "User-Agent":"clashmeta"
         },
         {
             "url": "URL",
@@ -16,7 +16,7 @@
             "emoji": 0,
             "subgroup": "命名/named",
             "prefix": "❤️",
-            "User-Agent":"clashmeta"
+            "User-Agent":"v2rayng"
         }
     ],
     "auto_set_outbounds_dns":{
@@ -26,6 +26,6 @@
     "save_config_path": "./config.json",
     "auto_backup": false,
     "exclude_protocol":"ssr",
-    "config_template": "",
+    "config_template": "https://raw.githubusercontent.com/Paff-77/sing-box-subscribe/refs/heads/main/config_template/1.json",
     "Only-nodes": false
 }
