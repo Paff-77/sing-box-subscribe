@@ -17,7 +17,7 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "https://1.1.1.1/dns-query",
+        "address": "h3://8.8.8.8/dns-query",
         "detour": "🚀 proxy",
         "client_subnet": "1.0.1.0"
       },
