@@ -429,7 +429,7 @@ def combin_to_config(config, data):
             i += 1
             for out in config_outbounds:
                 if out.get("outbounds"):
-                    if out['tag'] == 'Proxy':
+                    if out['tag'] == '🚀 proxy':
                         out["outbounds"] = [out["outbounds"]] if isinstance(out["outbounds"], str) else out["outbounds"]
                         if '{all}' in out["outbounds"]:
                             index_of_all = out["outbounds"].index('{all}')
@@ -442,7 +442,7 @@ def combin_to_config(config, data):
             if 'subgroup' not in group:
                 for out in config_outbounds:
                     if out.get("outbounds"):
-                        if out['tag'] == 'Proxy':
+                        if out['tag'] == '🚀 proxy':
                             out["outbounds"] = [out["outbounds"]] if isinstance(out["outbounds"], str) else out["outbounds"]
                             out["outbounds"].append('{' + group + '}')
     temp_outbounds = []
@@ -483,7 +483,7 @@ def combin_to_config(config, data):
                     else:
                         t_o.append(oo)
                 if len(t_o) == 0:
-                    t_o.append('Proxy')
+                    t_o.append('🚀 proxy')
                     print('发现 {} 出站下的节点数量为 0 ，会导致sing-box无法运行，请检查config模板是否正确。'.format(
                         po['tag']))
                     # print('Sing-Box không chạy được vì không tìm thấy bất kỳ proxy nào trong outbound của {}. Vui lòng kiểm tra xem mẫu cấu hình có đúng không!!'.format(po['tag']))
