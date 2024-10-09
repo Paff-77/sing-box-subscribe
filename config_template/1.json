@@ -141,7 +141,7 @@
         "🇺🇸 America",
         "✈️ Others"
       ],
-      "default": "🇸🇬 Singapore",
+      "default": "🇸🇬 Singapore"
     },
     {
       "tag": "🐦 Twitter",
@@ -232,7 +232,7 @@
         "🇭🇰 Hong Kong",
         "🇹🇼 Taiwan"
       ],
-      "default": "🇭🇰 Hong Kong",
+      "default": "🇭🇰 Hong Kong"
     },
     {
       "tag": "🎬 MediaVideo",
@@ -245,7 +245,7 @@
         "🇺🇸 America",
         "✈️ Others"
       ],
-      "default": "🇸🇬 Singapore",
+      "default": "🇸🇬 Singapore"
     },
     {
       "tag": "🌏 !cn",
