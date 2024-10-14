@@ -1,6 +1,6 @@
 {
   "log": {
-    "level": "silent",
+    "level": "error",
     "timestamp": true
   },
   "experimental": {
