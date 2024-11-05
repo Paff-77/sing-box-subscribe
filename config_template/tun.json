@@ -54,10 +54,6 @@
         "server": "🚫 Block"
       },
       {
-        "rule_set": "BlueSkyXN-ads-all",
-        "server": "🚫 Block"
-      },
-      {
         "rule_set": "easyad",
         "server": "🚫 Block"
       },
@@ -460,7 +456,7 @@
             "protocol": "dns"
           }
         ],
-        "outbound": "dns-out"
+        "outbound": "Dns-out"
       },
       {
         "rule_set": "AWAvenue-Ads-Rule",
@@ -533,11 +529,11 @@
       },
       {
         "rule_set": "geosite-tiktok",
-        "outbound": "🎬  TikTok"
+        "outbound": "🎬 TikTok"
       },
       {
         "rule_set": ["geoip-netflix", "geosite-netflix"],
-        "outbound": "🎬  Netflix"
+        "outbound": "🎬 Netflix"
       },
       {
         "rule_set": "geosite-disney",
