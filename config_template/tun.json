@@ -50,10 +50,6 @@
         "server": "🚫 Block"
       },
       {
-        "rule_set": "BlueSkyXN-ads-all",
-        "server": "🚫 Block"
-      },
-      {
         "rule_set": "AWAvenue-Ads-Rule",
         "server": "🚫 Block"
       },
