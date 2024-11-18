@@ -50,6 +50,10 @@
         "server": "🚫 Block"
       },
       {
+        "rule_set": "BlueSkyXN-ads-all",
+        "server": "🚫 Block"
+      },
+      {
         "rule_set": "AWAvenue-Ads-Rule",
         "server": "🚫 Block"
       },
@@ -150,11 +154,12 @@
       "type":"selector",
       "outbounds":[
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
       ],
-      "default": "🇹🇼 TaiWan"
+      "default": "🇸🇬 Singapore"
     },
     {
       "tag":"🌌 Google",
@@ -163,6 +168,7 @@
         "🚀 Proxy",
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
@@ -174,11 +180,12 @@
       "outbounds":[
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
       ],
-      "default": "🇭🇰 HongKong"
+      "default": "🇸🇬 Singapore"
     },
     {
       "tag":"🐦 Twitter",
@@ -186,6 +193,7 @@
       "outbounds":[
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
@@ -197,6 +205,7 @@
       "outbounds":[
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
@@ -225,6 +234,7 @@
       "outbounds":[
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
@@ -237,6 +247,7 @@
       "outbounds":[
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America"
       ],
@@ -248,11 +259,12 @@
       "outbounds":[
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
       ],
-      "default": "🇭🇰 HongKong"
+      "default": "🇸🇬 Singapore"
     },
     {
       "tag":"🎬 Disney+",
@@ -260,11 +272,12 @@
       "outbounds":[
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
       ],
-      "default": "🇭🇰 HongKong"
+      "default": "🇸🇬 Singapore"
     },
     {
       "tag":"🍎 Apple",
@@ -273,6 +286,7 @@
         "🎯 Direct",
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
@@ -285,6 +299,7 @@
         "🎯 Direct",
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
@@ -297,6 +312,7 @@
         "🎯 Direct",
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
@@ -308,6 +324,7 @@
       "outbounds":[
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others"
@@ -320,6 +337,7 @@
         "🚀 Proxy",
         "🇭🇰 HongKong",
         "🇹🇼 TaiWan",
+        "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
         "🌐 Others",
@@ -360,6 +378,16 @@
       ],
       "filter":[
         {"action":"include","keywords":["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]}
+      ]
+    },
+    {
+      "tag":"🇸🇬 Singapore",
+      "type":"selector",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["🇸🇬|SG|sg|新加坡|狮|Singapore"]}
       ]
     },
     {
@@ -437,6 +465,10 @@
       },
       {
         "rule_set": "AWAvenue-Ads-Rule",
+        "outbound": "🚫 AdBlock"
+      },
+      {
+        "rule_set": "BlueSkyXN-ads-all",
         "outbound": "🚫 AdBlock"
       },
       {
@@ -550,6 +582,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/Paff-77/sing-box-easylist@output/easylist.srs",
+        "download_detour": "🎯 Direct"
+      },
+      {
+        "tag": "BlueSkyXN-ads-all",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/Paff-77/sing-box-easylist@output/all.srs",
         "download_detour": "🎯 Direct"
       },
       {
