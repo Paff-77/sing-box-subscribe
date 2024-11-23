@@ -54,10 +54,6 @@
         "server": "🚫 Block"
       },
       {
-        "rule_set": "easyad",
-        "server": "🚫 Block"
-      },
-      {
         "outbound": "any",
         "server": "local"
       },
