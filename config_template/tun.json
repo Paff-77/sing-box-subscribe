@@ -50,6 +50,10 @@
         "server": "🚫 Block"
       },
       {
+        "rule_set": "easyad",
+        "outbound": "🚫 AdBlock"
+      },
+      {
         "rule_set": "AWAvenue-Ads-Rule",
         "server": "🚫 Block"
       },
@@ -457,10 +461,6 @@
       },
       {
         "rule_set": "AWAvenue-Ads-Rule",
-        "outbound": "🚫 AdBlock"
-      },
-      {
-        "rule_set": "BlueSkyXN-ads-all",
         "outbound": "🚫 AdBlock"
       },
       {
