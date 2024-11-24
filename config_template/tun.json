@@ -51,7 +51,7 @@
       },
       {
         "rule_set": "easyad",
-        "outbound": "🚫 AdBlock"
+        "server": "🚫 AdBlock"
       },
       {
         "rule_set": "AWAvenue-Ads-Rule",
