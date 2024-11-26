@@ -484,17 +484,17 @@
           "clash.razord.top",
           "yacd.metacubex.one",
           "yacd.haishan.me",
-          "netcup.com",
-          "netcup.eu",
-          "customercontrolpanel.de",
-          "servercontrolpanel.de",
+          "www.netcup.com",
+          "www.netcup.eu",
+          "www.customercontrolpanel.de",
+          "www.servercontrolpanel.de",
           "d.metacubex.one"
         ],
         "outbound": "🎯 Direct"
       },
       {
         "domain": [
-          "nodeseek.com"
+          "www.nodeseek.com"
         ],
         "outbound": "🌐 Others"
       },
