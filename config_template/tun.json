@@ -1,5 +1,6 @@
 {
   "log": {
+    "disabled": true,
     "level": "debug",
     "timestamp": true
   },
@@ -501,7 +502,8 @@
       },
       {
         "domain": [
-          "www.nodeseek.com"
+          "www.nodeseek.com",
+          "nodeseek.com"
         ],
         "outbound": "🌐 selector"
       },
