@@ -344,14 +344,6 @@
       ]
     },
     {
-      "tag":"🚫 AdBlock",
-      "type":"selector",
-      "outbounds":[
-        "🚫 Block",
-        "🎯 Direct"
-      ]
-    },
-    {
       "tag":"🇭🇰 HongKong",
       "type":"selector",
       "outbounds":[
