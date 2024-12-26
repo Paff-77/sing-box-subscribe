@@ -434,14 +434,6 @@
     {
       "type": "direct",
       "tag": "🎯 Direct"
-    },
-    {
-      "type": "dns",
-      "tag": "Dns-out"
-    },
-    {
-      "type": "block",
-      "tag": "🚫 Block"
     }
   ],
     "route": {
