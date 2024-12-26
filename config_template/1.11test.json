@@ -49,7 +49,7 @@
           "server": "local"
         },
         {
-          "clash_mode": "🌏 Global",
+          "clash_mode": "global",
           "server": "google"
         },
         {
@@ -474,7 +474,7 @@
           "outbound": "🎯 Direct"
         },
         {
-          "clash_mode": "🌏 Global",
+          "clash_mode": "global",
           "outbound": "🚀 Proxy"
         },
         {
