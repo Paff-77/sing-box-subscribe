@@ -602,7 +602,7 @@
         "tag": "geosite-bybit",
         "type": "remote",
         "format": "binary",
-        "url": "https://ghproxy.cn/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/bybit.srs",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bybit.srs",
         "download_detour": "🎯 Direct"
         },
               {
