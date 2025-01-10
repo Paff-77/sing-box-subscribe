@@ -154,7 +154,6 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
       ],
       "default": "🇸🇬 Singapore"
     },
@@ -168,7 +167,6 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
       ]
     },
     {
@@ -180,7 +178,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ],
       "default": "🇸🇬 Singapore"
     },
@@ -193,7 +191,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ]
     },
     {
@@ -205,7 +203,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ]
     },
     {
@@ -234,7 +232,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ],
       "default": "🇭🇰 HongKong"
     },
@@ -259,7 +257,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ],
       "default": "🇸🇬 Singapore"
     },
@@ -272,7 +270,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ],
       "default": "🇸🇬 Singapore"
     },
@@ -286,7 +284,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ]
     },
     {
@@ -299,7 +297,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ]
     },
     {
@@ -312,7 +310,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ]
     },
     {
@@ -324,7 +322,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others"
+
       ]
     },
     {
@@ -337,7 +335,7 @@
         "🇸🇬 Singapore",
         "🇯🇵 Japan",
         "🇺🇸 America",
-        "🌐 Others",
+,
         "🎯 Direct"
       ]
     },
@@ -405,16 +403,6 @@
       ],
       "filter":[
         {"action":"include","keywords":["🇺🇸|US|us|美国|美|United States"]}
-      ]
-    },
-    {
-      "tag":"🌐 Others",
-      "type":"selector",
-      "outbounds":[
-        "{all}"
-      ],
-      "filter":[
-        {"action":"exclude","keywords":["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"]}
       ]
     },
     {
