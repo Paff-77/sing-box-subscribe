@@ -32,7 +32,7 @@
         },
         {
           "tag": "google",
-          "address": "https://cao.taniang.de:444/dns-query",
+          "address": "quic://172.99.138.50:888",
           "detour": "🎯 Direct"
         },
         {
