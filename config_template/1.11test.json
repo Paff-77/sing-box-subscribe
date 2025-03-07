@@ -19,84 +19,58 @@
       }
     },
     "dns": {
-      "fakeip": {
-        "enabled": true,
-        "inet4_range": "198.18.0.0/15",
-        "inet6_range": "fc00::/18"
-      },
       "servers": [
         {
-          "tag": "dns_resolver",
-          "address": "223.5.5.5",
-          "strategy": "ipv4_only",
-          "detour": "🎯 Direct"
-        },
-        {
-          "tag": "local",
-          "address": "https://cao.taniang.de/bi",
-          "address_resolver": "dns_resolver", 
-          "detour": "🎯 Direct"
-        },
-        {
           "tag": "google",
-          "address": "tls://8.8.8.8"
+          "address": "https://cao.taniang.de/bi",
+          "address_resolver": "resolver"
         },
-        {
-          "tag": "fakeip",
-          "address": "fakeip"
-        }
-      ],
-      "rules": [
-        {
-          "outbound": "any",
-          "server": "local"
-        },
-        {
-          "clash_mode": "direct",
-          "server": "local"
-        },
-        {
-          "clash_mode": "global",
-          "server": "google"
-        },
-        {
-          "query_type": [
-            "A",
-            "AAAA"
-          ],
-          "rule_set": "geosite-cn",
-          "server": "fakeip"
-        },
-        {
-          "rule_set": "geosite-cn",
-          "server": "local"
-        },
-        {
-          "type": "logical",
-          "mode": "and",
-          "rules": [
-            {
-              "rule_set": "geosite-geolocation-!cn",
-              "invert": true
-            },
-            {
-              "rule_set": "geoip-cn"
-            }
-          ],
-          "server": "google",
-          "client_subnet": "114.114.114.114/24"
-        },
-        {
-          "query_type": [
-            "A",
-            "AAAA"
-          ],
-          "server": "fakeip"
-        }
-      ],
-      "independent_cache": true,
-      "strategy": "prefer_ipv4"
-    },
+      {
+        "tag": "local",
+        "address": "https://dns.alidns.com/dns-query",
+        "address_resolver": "resolver",
+        "detour": "🎯 Direct"
+      },
+      {
+        "tag": "resolver",
+        "address": "223.5.5.5",
+        "detour": "🎯 Direct"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "resolver"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "local"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "google"
+      },
+      {
+        "rule_set": "geosite-cn",
+        "server": "local"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geosite-geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "google",
+        "client_subnet": "1.0.8.0/24"
+      }
+    ]
+  },  
     "inbounds": [
       {
         "tag": "tun-in",
