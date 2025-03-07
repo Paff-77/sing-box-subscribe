@@ -33,6 +33,7 @@
         {
           "tag": "google",
           "address": "https://cao.taniang.de:444/dns-query",
+          "detour": "🎯 Direct"
         },
         {
           "tag": "fakeip",
