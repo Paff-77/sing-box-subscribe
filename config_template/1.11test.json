@@ -27,12 +27,12 @@
       "servers": [
         {
           "tag": "local",
-          "address": "quic://172.99.138.50:888",
+          "address": "https://cao.taniang.de/bi",
           "detour": "🎯 Direct"
         },
         {
           "tag": "google",
-          "address": "quic://172.99.138.50:888",
+          "address": "tls://8.8.8.8",
           "detour": "🎯 Direct"
         },
         {
