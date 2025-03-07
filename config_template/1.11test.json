@@ -32,8 +32,7 @@
         },
         {
           "tag": "google",
-          "address": "tls://8.8.8.8",
-          "detour": "🎯 Direct"
+          "address": "tls://8.8.8.8"
         },
         {
           "tag": "fakeip",
