@@ -27,7 +27,7 @@
       "servers": [
         {
           "tag": "google",
-          "address": "tls://8.8.8.8"
+          "address": "quic://cao.taniang.de:888"
         },
         {
           "tag": "local",
