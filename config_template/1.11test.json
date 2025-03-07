@@ -26,8 +26,10 @@
       },
       "servers": [
         {
+          "type": "quic",
           "tag": "google",
-          "address": "quic://cao.taniang.de:888"
+          "server": "quic://cao.taniang.de"
+          "server_port": 888
         },
         {
           "tag": "local",
