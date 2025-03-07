@@ -25,11 +25,9 @@
         "inet6_range": "fc00::/18"
       },
       "servers": [
-        {
-          "type": "quic",
+         {
           "tag": "google",
-          "server": "quic://cao.taniang.de"
-          "server_port": 888
+          "address": "https://cao.taniang.de:444/dns-query",
         },
         {
           "tag": "local",
