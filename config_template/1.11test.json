@@ -43,11 +43,11 @@
         "server": "resolver"
       },
       {
-        "clash_mode": "Direct",
+        "clash_mode": "direct",
         "server": "local"
       },
       {
-        "clash_mode": "Global",
+        "clash_mode": "global",
         "server": "google"
       },
       {
