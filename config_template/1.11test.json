@@ -495,7 +495,8 @@
         },
         {
           "domain": [
-          "ai.google.dev"
+          "ai.google.dev",
+          "aistudio.google.com"
           ],
           "outbound": "🤖 OpenAI"
         },
