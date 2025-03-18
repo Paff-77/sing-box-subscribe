@@ -21,7 +21,20 @@ proxy-groups:
     include-all: true
     interval: 300
     tolerance: 50
-  - name: 电报消息
+  - name: 电报消息DC5
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
+    type: select
+    proxies:
+      - 狮城节点
+      - 香港节点
+      - 节点选择
+      - 自动选择
+      - 台湾节点
+      - 日本节点
+      - 美国节点
+      - 手动切换
+      - DIRECT
+  - name: 电报消息DC4
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
     type: select
     proxies:
@@ -34,10 +47,24 @@ proxy-groups:
       - 美国节点
       - 手动切换
       - DIRECT
+  - name: 电报消息DC1
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
+    type: select
+    proxies:
+      - 美国节点
+      - 节点选择
+      - 自动选择
+      - 狮城节点
+      - 香港节点
+      - 台湾节点
+      - 日本节点
+      - 手动切换
+      - DIRECT
   - name: OpenAi
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
     type: select
     proxies:
+      - 德国节点
       - 节点选择
       - 自动选择
       - 狮城节点
@@ -224,6 +251,7 @@ proxy-groups:
       - 狮城节点
       - 日本节点
       - 美国节点
+      - 德国节点
       - 手动切换
   - name: 香港节点
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
@@ -249,6 +277,11 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
     include-all: true
     filter: (?i)新加坡|坡|狮城| SG |Singapore
+    type: select
+  - name: 德国节点
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Germany.png
+    include-all: true
+    filter: (?i)德国|🇩🇪|德| DE |Germany
     type: select
   - name: GLOBAL
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png
@@ -282,6 +315,7 @@ proxy-groups:
       - 美国节点
       - 台湾节点
       - 狮城节点
+      - 德国节点
 
 rule-providers:
   LocalAreaNetwork:
@@ -507,7 +541,13 @@ rules:
   - "RULE-SET,OneDrive,微软云盘"
   - "RULE-SET,Microsoft,微软服务"
   - "RULE-SET,Apple,苹果服务"
-  - "RULE-SET,Telegram,电报消息"
+  - "IP-ASN,44907,电报消息DC5, no-resolve"
+  - "IP-ASN,62014,电报消息DC5, no-resolve"
+  - "IP-ASN,59930,电报消息DC1, no-resolve"
+  - "IP-ASN,62041,电报消息DC4, no-resolve"
+  - "IP-ASN,211157,电报消息DC4, no-resolve"
+  - "IP-CIDR,5.28.192.0/18,电报消息DC4, no-resolve"
+  - "IP-CIDR,109.239.140.0/24,电报消息DC4, no-resolve"
   - "RULE-SET,OpenAi,OpenAi"
   - "RULE-SET,NetEaseMusic,网易音乐"
   - "RULE-SET,Epic,游戏平台"
