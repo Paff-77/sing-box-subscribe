@@ -424,27 +424,30 @@
       "tag": "🎯 Direct"
     }
   ],
-    "route": {
-      "auto_detect_interface": true,
-      "final": "🚀 Proxy",
-      "rules": [
-        {
-          "inbound": ["tun-in", "mixed-in"],
-          "action": "sniff"
-        },
-        {
-          "type": "logical",
-          "mode": "or",
-          "rules":[
-            {
-              "port":53
-            },
-            {
-              "protocol": "dns"
-            }
-          ],
-          "action": "hijack-dns"
-        },
+  "route": {
+    "default_domain_resolver": {
+      "server": "local"
+    },
+    "auto_detect_interface": true,
+    "final": "🚀 Proxy",
+    "rules": [
+      {
+        "inbound": ["tun-in", "mixed-in"],
+        "action": "sniff"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules":[
+          {
+            "port":53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
+      },
         {
           "rule_set": "exclude",
           "outbound": "🚀 Proxy"
