@@ -1,4 +1,5 @@
-#统一延迟
+ipv6: true
+# 统一延迟
 # 更换延迟计算方式,去除握手等额外延迟
 unified-delay: true
 # TCP 并发
