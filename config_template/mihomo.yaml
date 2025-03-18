@@ -91,12 +91,12 @@ proxy-groups:
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
     type: select
     proxies:
-      - 德国节点
+      - 台湾节点
       - 节点选择
       - 自动选择
       - 狮城节点
       - 香港节点
-      - 台湾节点
+      - 德国节点
       - 日本节点
       - 美国节点
       - 手动切换
