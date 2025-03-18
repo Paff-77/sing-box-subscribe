@@ -71,7 +71,6 @@ proxy-groups:
       - 台湾节点
       - 日本节点
       - 美国节点
-      - 德国节点
       - 手动切换
       - DIRECT
   - name: 电报消息DC1
