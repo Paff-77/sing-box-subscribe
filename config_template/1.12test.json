@@ -22,15 +22,16 @@
     "servers": [
       {
         "tag": "google",
-        "type": "tls",
-        "server": "8.8.8.8",
-        "detour": "🚀 Proxy"
+        "type": "https",
+        "server": "cao.taniang.de",
+        "path": "/bi",
+        "detour": "🎯 Direct"
       },
       {
         "tag": "local",
         "type": "https",
-        "server": "cao.taniang.de",
-        "path": "/bi",
+        "server": "223.6.6.6",
+        "path": "/dns-query",
         "detour": "🎯 Direct"
       },
       {
