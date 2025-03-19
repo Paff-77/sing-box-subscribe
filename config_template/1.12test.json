@@ -90,7 +90,6 @@
       }
     ],
     "independent_cache": true,
-    "client_subnet": "223.104.161.16",
     "strategy": "prefer_ipv4"
   },
     "inbounds": [
