@@ -31,8 +31,8 @@
         "type": "https",
         "server": "cao.taniang.de",
         "path": "/bi",
-        "detour": "🎯 Direct",
-        "domain_resolver": "alibaba"
+        "client_subnet": "223.104.161.16",
+        "detour": "🎯 Direct"
       },
       {
         "type": "udp",
@@ -433,7 +433,7 @@
   ],
   "route": {
     "default_domain_resolver": {
-      "server": "local"
+      "server": "alibaba"
     },
     "auto_detect_interface": true,
     "final": "🚀 Proxy",
