@@ -29,8 +29,15 @@
       {
         "tag": "local",
         "type": "https",
-        "server": "223.5.5.5",
+        "server": "cao.taniang.de",
+        "path": "/bi",
         "detour": "🎯 Direct"
+        "domain_resolver": "alibaba"
+      },
+      {
+        "type": "udp",
+        "tag": "alibaba",
+        "server": "223.5.5.5"
       },
       {
         "tag": "fakeip",
