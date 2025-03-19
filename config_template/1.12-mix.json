@@ -1,47 +1,45 @@
 {
-    "log": {
-      "level": "debug",
-      "timestamp": true
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "ui",
+      "secret": "",
+      "external_ui_download_url": "https://gh-proxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "direct",
+      "default_mode": "rule"
     },
-    "experimental": {
-      "clash_api": {
-        "external_controller": "127.0.0.1:20123",
-        "external_ui": "ui",
-        "secret": "ID_ijva201x",
-        "external_ui_download_url": "https://ghproxy.cn/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-        "external_ui_download_detour": "🎯 Direct",
-        "default_mode": "rule"
+  "cache_file": {
+    "enabled": true,
+    "store_fakeip": true,
+    "store_rdrc": true
+    }
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "google",
+        "type": "tls",
+        "server": "8.8.8.8",
+        "detour": "🚀 Proxy"
       },
-    "cache_file": {
-      "enabled": true,
-      "store_fakeip": true,
-      "store_rdrc": true
-      }
-    },
-    "dns": {
-      "servers": [
-        {
-          "tag": "google",
-          "address": "https://cao.taniang.de/bi",
-          "address_resolver": "resolver"
-        },
       {
         "tag": "local",
-        "address": "https://dns.alidns.com/dns-query",
-        "address_resolver": "resolver",
+        "type": "https",
+        "server": "223.5.5.5",
         "detour": "🎯 Direct"
       },
       {
-        "tag": "resolver",
-        "address": "223.5.5.5",
-        "detour": "🎯 Direct"
+        "tag": "fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
       }
     ],
     "rules": [
-      {
-        "outbound": "any",
-        "server": "resolver"
-      },
       {
         "clash_mode": "direct",
         "server": "local"
@@ -49,6 +47,14 @@
       {
         "clash_mode": "global",
         "server": "google"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "rule_set": "geosite-cn",
+        "server": "fakeip"
       },
       {
         "rule_set": "geosite-cn",
@@ -67,10 +73,19 @@
           }
         ],
         "server": "google",
-        "client_subnet": "1.0.8.0/24"
+        "client_subnet": "114.114.114.114/24"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
       }
-    ]
-  },  
+    ],
+    "independent_cache": true,
+    "strategy": "prefer_ipv4"
+  },
     "inbounds": [
       {
         "tag": "mixed-in",
@@ -391,27 +406,30 @@
       "tag": "🎯 Direct"
     }
   ],
-    "route": {
-      "auto_detect_interface": true,
-      "final": "🚀 Proxy",
-      "rules": [
-        {
-          "inbound": ["tun-in", "mixed-in"],
-          "action": "sniff"
-        },
-        {
-          "type": "logical",
-          "mode": "or",
-          "rules":[
-            {
-              "port":53
-            },
-            {
-              "protocol": "dns"
-            }
-          ],
-          "action": "hijack-dns"
-        },
+  "route": {
+    "default_domain_resolver": {
+      "server": "local"
+    },
+    "auto_detect_interface": true,
+    "final": "🚀 Proxy",
+    "rules": [
+      {
+        "inbound": ["tun-in", "mixed-in"],
+        "action": "sniff"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules":[
+          {
+            "port":53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
+      },
         {
           "rule_set": "exclude",
           "outbound": "🚀 Proxy"
@@ -474,6 +492,13 @@
           "clip.makima.online"
           ],
           "outbound": "🎯 Direct"
+        },
+        {
+          "domain": [
+          "ai.google.dev",
+          "aistudio.google.com"
+          ],
+          "outbound": "🤖 OpenAI"
         },
         {
           "domain": [
