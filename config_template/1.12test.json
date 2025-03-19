@@ -31,7 +31,7 @@
         "type": "https",
         "server": "cao.taniang.de",
         "path": "/bi",
-        "detour": "🎯 Direct".
+        "detour": "🎯 Direct",
         "domain_resolver": "alibaba"
       },
       {
