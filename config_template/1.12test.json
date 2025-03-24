@@ -22,16 +22,14 @@
     "servers": [
       {
         "tag": "google",
-        "type": "https",
-        "server": "cao.taniang.de",
-        "path": "/bi",
+        "type": "tls",
+        "server": "8.8.8.8",
         "detour": "🎯 Direct"
       },
       {
         "tag": "local",
-        "type": "https",
-        "server": "cao.taniang.de",
-        "path": "/bi",
+        "type": "quic",
+        "server": "223.5.5.5",
         "detour": "🎯 Direct"
       },
       {
@@ -427,9 +425,6 @@
     }
   ],
   "route": {
-    "default_domain_resolver": {
-      "server": "alibaba"
-    },
     "auto_detect_interface": true,
     "final": "🚀 Proxy",
     "rules": [
