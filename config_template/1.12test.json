@@ -30,8 +30,8 @@
       {
         "tag": "local",
         "type": "https",
-        "server": "223.6.6.6",
-        "path": "/dns-query",
+        "server": "cao.taniang.de",
+        "path": "/bi",
         "detour": "🎯 Direct"
       },
       {
