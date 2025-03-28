@@ -301,7 +301,7 @@ proxy-groups:
     filter: (?i)新加坡|坡|狮城|SG|Singapore
     type: select
   - name: 欧洲节点
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/European_Union.png
     include-all: true
     filter: (?i)DE|UK|GB|FR|PL|NL
     type: select
