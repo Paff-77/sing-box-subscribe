@@ -425,6 +425,9 @@
     }
   ],
   "route": {
+    "default_domain_resolver": {
+      "server": "local"
+    },
     "auto_detect_interface": true,
     "final": "🚀 Proxy",
     "rules": [
