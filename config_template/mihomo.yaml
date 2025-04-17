@@ -433,7 +433,7 @@ rule-providers:
     format: text
     type: http
   OpenAi:
-    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/OpenAi.list
+    url: https://testingcf.jsdelivr.net/gh/szkane/ClashRuleSet@main/Clash/Ruleset/AiDomain.list
     path: ./ruleset/OpenAi.list
     behavior: classical
     interval: 86400
