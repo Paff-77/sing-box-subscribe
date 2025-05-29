@@ -96,7 +96,7 @@
   "outbounds": [{
           "type": "selector",
           "tag": "🚀 NodeSelect",
-          "outbounds": ["👋 ManualSelect", "✅ AutoSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "direct"]
+          "outbounds": ["👋 ManualSelect", "✅ AutoSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "🎯 Direct"]
       }, {
           "type": "selector",
           "tag": "👋 ManualSelect",
@@ -170,39 +170,39 @@
       },  {
           "type": "selector",
           "tag": "🤖 GlobalAI",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
+          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
       }, {
           "type": "selector",
           "tag": "🍎 Apple",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
+          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
       }, {
           "type": "selector",
           "tag": "✈️ TelegramDC5",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
+          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
       }, {
           "type": "selector",
           "tag": "✈️ TelegramDC1",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
+          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
       }, {
           "type": "selector",
           "tag": "✈️ TelegramDC4",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
+          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
       }, {
           "type": "selector",
           "tag": "📺 BiliBili",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
+          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
       }, {
           "type": "selector",
           "tag": "🎮 Steam",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
+          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
       }, {
           "type": "selector",
           "tag": "☁️ OneDrive",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
+          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
       }, {
           "type": "selector",
           "tag": "🐟 FinalProxy",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
+          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
       }, {
           "type": "urltest",
           "tag": "✅ AutoSelect",
@@ -221,68 +221,68 @@
               "tag": "AWAvenue-Ads",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/Paff-77/sing-box-easylist/raw/refs/heads/output/AWAvenue-Ads-Rule.srs",
-              "download_detour": "direct",
+              "download_detour": "🎯 Direct",
               "update_interval": "10m"
           }, {
               "type": "remote",
               "tag": "geosite-category-ai-chat-!cn",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ai-chat-!cn.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }, {
               "type": "remote",
               "tag": "geosite-apple",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }, {
               "type": "remote",
               "tag": "geosite-apple-cn",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple@cn.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }, {
               "type": "remote",
               "tag": "geosite-bilibili",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-bilibili.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }, {
               "type": "remote",
               "tag": "geosite-steam",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }, {
               "type": "remote",
               "tag": "geosite-steam-cn",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam@cn.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }, {
               "type": "remote",
               "tag": "geosite-onedrive",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-onedrive.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }, {
               "type": "remote",
               "tag": "geosite-geolocation-!cn",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-geolocation-!cn.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }, {
               "type": "remote",
               "tag": "geosite-cn",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-cn.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }, {
               "type": "remote",
               "tag": "geoip-cn",
               "format": "binary",
               "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geoip/raw/refs/heads/rule-set/geoip-cn.srs",
-              "download_detour": "direct"
+              "download_detour": "🎯 Direct"
           }
       ],
       "rules": [{
@@ -343,7 +343,7 @@
               "outbound": "✈️ TelegramDC4"
           }, {
               "rule_set": ["geosite-steam-cn"],
-              "outbound": "direct"
+              "outbound": "🎯 Direct"
           }, {
               "rule_set": ["geosite-steam"],
               "outbound": "🎮 Steam"
@@ -355,13 +355,13 @@
               "outbound": "🐟 FinalProxy"
           }, {
               "rule_set": ["geosite-cn"],
-              "outbound": "direct"
+              "outbound": "🎯 Direct"
           }, {
               "rule_set": ["geoip-cn"],
-              "outbound": "direct"
+              "outbound": "🎯 Direct"
           }, {
               "ip_cidr": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16", "100.64.0.0/10", "127.0.0.0/8"],
-              "outbound": "direct"
+              "outbound": "🎯 Direct"
           }
       ],
       "auto_detect_interface": true
