@@ -1,387 +1,395 @@
 {
-  "log": {
-      "disabled": true,
-      "level": "debug",
-      "timestamp": true
-  },
-  "experimental": {
-      "clash_api": {
-          "external_controller": "127.0.0.1:20123",
-          "external_ui": "ui",
-          "secret": "ID_ijva201x",
-          "external_ui_download_url": "https://gh.zakozako.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
-          "external_ui_download_detour": "🎯 Direct",
-          "default_mode": "rule"
-      },
-      "cache_file": {
-          "enabled": true,
-          "store_fakeip": true,
-          "store_rdrc": true
-      }
-  },
-  "dns": {
-      "fakeip": {
-          "enabled": true,
-          "inet4_range": "198.18.0.0/15",
-          "inet6_range": "fc00::/18"
-      },
-      "servers": [{
-              "tag": "doh",
-              "address": "https://cao.taniang.de/bi",
-              "address_resolver": "local",
-              "detour": "🚀 NodeSelect"
-          }, {
-              "tag": "local",
-              "address": "https://223.5.5.5/dns-query",
-              "detour": "🎯 Direct"
-          }, {
-              "tag": "fakeip",
-              "address": "fakeip"
-          }
-      ],
-      "rules": [{
-              "outbound": "any",
-              "server": "local"
-          }, {
-              "clash_mode": "direct",
-              "server": "local"
-          }, {
-              "clash_mode": "🌏 Global",
-              "server": "doh"
-          }, {
-              "query_type": ["A", "AAAA"],
-              "rule_set": "geosite-cn",
-              "server": "fakeip"
-          }, {
-              "rule_set": "geosite-cn",
-              "server": "local"
-          }, {
-              "type": "logical",
-              "mode": "and",
-              "rules": [{
-                      "rule_set": "geosite-geolocation-!cn",
-                      "invert": true
-                  }, {
-                      "rule_set": "geoip-cn"
-                  }
-              ],
-              "server": "doh",
-              "client_subnet": "114.114.114.114/24"
-          }, {
-              "query_type": ["A", "AAAA"],
-              "server": "fakeip"
-          }
-      ],
-      "independent_cache": true,
-      "strategy": "prefer_ipv4"
-  },
-  "inbounds": [
-    {
+    "log": {
+        "disabled": true,
+        "level": "debug",
+        "timestamp": true
+    },
+    "experimental": {
+        "clash_api": {
+            "external_controller": "127.0.0.1:20123",
+            "external_ui": "ui",
+            "secret": "ID_ijva201x",
+            "external_ui_download_url": "https://gh.zakozako.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+            "external_ui_download_detour": "🎯 Direct",
+            "default_mode": "rule"
+        },
+        "cache_file": {
+            "enabled": true,
+            "store_fakeip": true,
+            "store_rdrc": true
+        }
+    },
+    "dns": {
+        "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00::/18"
+        },
+        "servers": [{
+                "tag": "doh",
+                "address": "https://cao.taniang.de/bi",
+                "address_resolver": "local",
+                "detour": "🚀 NodeSelect"
+            }, {
+                "tag": "local",
+                "address": "https://223.5.5.5/dns-query",
+                "detour": "🎯 Direct"
+            }, {
+                "tag": "fakeip",
+                "address": "fakeip"
+            }
+        ],
+        "rules": [{
+                "outbound": "any",
+                "server": "local"
+            }, {
+                "clash_mode": "direct",
+                "server": "local"
+            }, {
+                "clash_mode": "🌏 Global",
+                "server": "doh"
+            }, {
+                "query_type": ["A", "AAAA"],
+                "rule_set": "geosite-cn",
+                "server": "fakeip"
+            }, {
+                "rule_set": "geosite-cn",
+                "server": "local"
+            }, {
+                "type": "logical",
+                "mode": "and",
+                "rules": [{
+                        "rule_set": "geosite-geolocation-!cn",
+                        "invert": true
+                    }, {
+                        "rule_set": "geoip-cn"
+                    }
+                ],
+                "server": "doh",
+                "client_subnet": "114.114.114.114/24"
+            }, {
+                "query_type": ["A", "AAAA"],
+                "server": "fakeip"
+            }
+        ],
+        "independent_cache": true,
+        "strategy": "prefer_ipv4"
+    },
+    "inbounds": [{
             "type": "mixed",
             "tag": "mixed-in",
             "listen": "0.0.0.0",
             "listen_port": 7890
         }, {
-            "type": "tun",
             "tag": "tun-in",
-            "inet4_address": "172.19.0.1/30",
+            "type": "tun",
+            "address": [
+                "172.19.0.0/30",
+                "fdfe:dcba:9876::0/126"
+            ],
+            "stack": "system",
             "auto_route": true,
             "strict_route": true,
-            "stack": "mixed",
-            "sniff": true
+            "platform": {
+                "http_proxy": {
+                    "enabled": true,
+                    "server": "127.0.0.1",
+                    "server_port": 7890
+                }
+            }
         }
-  ],
-  "outbounds": [{
-          "type": "selector",
-          "tag": "🚀 NodeSelect",
-          "outbounds": ["👋 ManualSelect", "✅ AutoSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "🎯 Direct"]
-      }, {
-          "type": "selector",
-          "tag": "👋 ManualSelect",
-          "outbounds": ["{all}"]
-      }, {
-          "tag": "🇭🇰 HongKong",
-          "type": "selector",
-          "outbounds": [
-              "{all}"
-          ],
-          "filter": [{
-                  "action": "include",
-                  "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
-              }
-          ]
-      }, {
-          "tag": "🇨🇳 Taiwan",
-          "type": "selector",
-          "outbounds": [
-              "{all}"
-          ],
-          "filter": [{
-                  "action": "include",
-                  "keywords": ["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]
-              }
-          ]
-      }, {
-          "tag": "🇸🇬 Singapore",
-          "type": "selector",
-          "outbounds": [
-              "{all}"
-          ],
-          "filter": [{
-                  "action": "include",
-                  "keywords": ["🇸🇬|SG|sg|新加坡|狮|Singapore"]
-              }
-          ]
-      }, {
-          "tag": "🇯🇵 Japan",
-          "type": "selector",
-          "outbounds": [
-              "{all}"
-          ],
-          "filter": [{
-                  "action": "include",
-                  "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]
-              }
-          ]
-      }, {
-          "tag": "🇺🇸 United States",
-          "type": "selector",
-          "outbounds": [
-              "{all}"
-          ],
-          "filter": [{
-                  "action": "include",
-                  "keywords": ["🇺🇸|US|us|美国|美|United States"]
-              }
-          ]
-      }, {
-          "tag": "🌍 OtherRegions",
-          "type": "selector",
-          "outbounds": [
-              "{all}"
-          ],
-          "filter": [{
-                  "action": "exclude",
-                  "keywords": ["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"]
-              }
-          ]
-      }, {
-          "type": "selector",
-          "tag": "🤖 GlobalAI",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
-      }, {
-          "type": "selector",
-          "tag": "🍎 Apple",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
-      }, {
-          "type": "selector",
-          "tag": "✈️ TelegramDC5",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
-      }, {
-          "type": "selector",
-          "tag": "✈️ TelegramDC1",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
-      }, {
-          "type": "selector",
-          "tag": "✈️ TelegramDC4",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
-      }, {
-          "type": "selector",
-          "tag": "📺 BiliBili",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
-      }, {
-          "type": "selector",
-          "tag": "🎮 Steam",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
-      }, {
-          "type": "selector",
-          "tag": "☁️ OneDrive",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
-      }, {
-          "type": "selector",
-          "tag": "🐟 FinalProxy",
-          "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
-      }, {
-          "type": "urltest",
-          "tag": "✅ AutoSelect",
-          "outbounds": ["{all}"],
-          "url": "https://cp.cloudflare.com",
-          "interval": "5m",
-          "tolerance": 2
-      }, {
-          "type": "direct",
-          "tag": "🎯 Direct"
-      }
-  ],
-  "route": {
-      "rule_set": [{
-              "type": "remote",
-              "tag": "AWAvenue-Ads",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/Paff-77/sing-box-easylist/raw/refs/heads/output/AWAvenue-Ads-Rule.srs",
-              "download_detour": "🎯 Direct",
-              "update_interval": "10m"
-          }, {
-              "type": "remote",
-              "tag": "geosite-category-ai-chat-!cn",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ai-chat-!cn.srs",
-              "download_detour": "🎯 Direct"
-          }, {
-              "type": "remote",
-              "tag": "geosite-apple",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple.srs",
-              "download_detour": "🎯 Direct"
-          }, {
-              "type": "remote",
-              "tag": "geosite-apple-cn",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple@cn.srs",
-              "download_detour": "🎯 Direct"
-          }, {
-              "type": "remote",
-              "tag": "geosite-bilibili",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-bilibili.srs",
-              "download_detour": "🎯 Direct"
-          }, {
-              "type": "remote",
-              "tag": "geosite-steam",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam.srs",
-              "download_detour": "🎯 Direct"
-          }, {
-              "type": "remote",
-              "tag": "geosite-steam-cn",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam@cn.srs",
-              "download_detour": "🎯 Direct"
-          }, {
-              "type": "remote",
-              "tag": "geosite-onedrive",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-onedrive.srs",
-              "download_detour": "🎯 Direct"
-          }, {
-              "type": "remote",
-              "tag": "geosite-geolocation-!cn",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-geolocation-!cn.srs",
-              "download_detour": "🎯 Direct"
-          }, {
-              "type": "remote",
-              "tag": "geosite-cn",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-cn.srs",
-              "download_detour": "🎯 Direct"
-          }, {
-              "type": "remote",
-              "tag": "geoip-cn",
-              "format": "binary",
-              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geoip/raw/refs/heads/rule-set/geoip-cn.srs",
-              "download_detour": "🎯 Direct"
-          }
-      ],
-      "rules": [{
-              "inbound": ["tun-in", "mixed-in"],
-              "action": "sniff"
-          }, {
-              "type": "logical",
-              "mode": "or",
-              "rules": [{
-                      "port": 53
-                  }, {
-                      "protocol": "dns"
-                  }
-              ],
-              "action": "hijack-dns"
-          }, {
-              "protocol": ["udp"],
-              "destination_port": [443],
-              "rule_set": [
-                  "geosite-cn"
-              ],
-              "action": "reject"
-          }, {
-              "protocol": ["udp"],
-              "destination_port": [443],
-              "rule_set": [
-                  "geoip-cn"
-              ],
-              "action": "reject"
-          }, {
-              "rule_set": ["AWAvenue-Ads"],
-              "action": "reject"
-          }, {
-              "rule_set": ["geosite-bilibili"],
-              "outbound": "📺 BiliBili"
-          }, {
-              "rule_set": ["geosite-category-ai-chat-!cn"],
-              "outbound": "🤖 GlobalAI"
-          }, {
-              "rule_set": ["geosite-apple", "geosite-apple-cn"],
-              "outbound": "🍎 Apple"
-          }, {
-              "ip_cidr": [
-                  "91.108.16.0/21",
-                  "91.108.56.0/23",
-                  "149.154.168.0/22",
-                  "2001:b28:f23c::/48",
-                  "2001:b28:f23f::/48"
-              ],
-              "outbound": "✈️ TelegramDC5"
-          }, {
-              "ip_cidr": [
-                  "91.108.12.0/22",
-                  "149.154.172.0/22",
-                  "2001:b28:f23d::/48"
-              ],
-              "outbound": "✈️ TelegramDC1"
-          }, {
-              "ip_cidr": [
-                  "5.28.192.0/18",
-                  "91.105.192.0/23",
-                  "91.108.4.0/22",
-                  "91.108.8.0/22",
-                  "91.108.56.0/22",
-                  "95.161.64.0/20",
-                  "109.239.140.0/24",
-                  "149.154.160.0/21",
-                  "185.76.151.0/24",
-                  "2001:67c:4e8::/48",
-                  "2a0a:f280:203::/48"
-              ],
-              "outbound": "✈️ TelegramDC4"
-          }, {
-              "rule_set": ["geosite-steam-cn"],
-              "outbound": "🎯 Direct"
-          }, {
-              "rule_set": ["geosite-steam"],
-              "outbound": "🎮 Steam"
-          }, {
-              "rule_set": ["geosite-onedrive"],
-              "outbound": "☁️ OneDrive"
-          }, {
-              "rule_set": ["geosite-geolocation-!cn"],
-              "outbound": "🐟 FinalProxy"
-          }, {
-              "rule_set": ["geosite-cn"],
-              "outbound": "🎯 Direct"
-          }, {
-              "rule_set": ["geoip-cn"],
-              "outbound": "🎯 Direct"
-          }, {
-              "ip_cidr": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16", "100.64.0.0/10", "127.0.0.0/8"],
-              "outbound": "🎯 Direct"
-          }
-      ],
-      "auto_detect_interface": true
-  },
-  "ntp": {
-      "enabled": true,
-      "server": "time.apple.com",
-      "server_port": 123,
-      "interval": "30m"
-  }
+    ],
+    "outbounds": [{
+            "type": "selector",
+            "tag": "🚀 NodeSelect",
+            "outbounds": ["👋 ManualSelect", "✅ AutoSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "🎯 Direct"]
+        }, {
+            "type": "selector",
+            "tag": "👋 ManualSelect",
+            "outbounds": ["{all}"]
+        }, {
+            "tag": "🇭🇰 HongKong",
+            "type": "selector",
+            "outbounds": [
+                "{all}"
+            ],
+            "filter": [{
+                    "action": "include",
+                    "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
+                }
+            ]
+        }, {
+            "tag": "🇨🇳 Taiwan",
+            "type": "selector",
+            "outbounds": [
+                "{all}"
+            ],
+            "filter": [{
+                    "action": "include",
+                    "keywords": ["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]
+                }
+            ]
+        }, {
+            "tag": "🇸🇬 Singapore",
+            "type": "selector",
+            "outbounds": [
+                "{all}"
+            ],
+            "filter": [{
+                    "action": "include",
+                    "keywords": ["🇸🇬|SG|sg|新加坡|狮|Singapore"]
+                }
+            ]
+        }, {
+            "tag": "🇯🇵 Japan",
+            "type": "selector",
+            "outbounds": [
+                "{all}"
+            ],
+            "filter": [{
+                    "action": "include",
+                    "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]
+                }
+            ]
+        }, {
+            "tag": "🇺🇸 United States",
+            "type": "selector",
+            "outbounds": [
+                "{all}"
+            ],
+            "filter": [{
+                    "action": "include",
+                    "keywords": ["🇺🇸|US|us|美国|美|United States"]
+                }
+            ]
+        }, {
+            "tag": "🌍 OtherRegions",
+            "type": "selector",
+            "outbounds": [
+                "{all}"
+            ],
+            "filter": [{
+                    "action": "exclude",
+                    "keywords": ["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"]
+                }
+            ]
+        }, {
+            "type": "selector",
+            "tag": "🤖 GlobalAI",
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+        }, {
+            "type": "selector",
+            "tag": "🍎 Apple",
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+        }, {
+            "type": "selector",
+            "tag": "✈️ TelegramDC5",
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+        }, {
+            "type": "selector",
+            "tag": "✈️ TelegramDC1",
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+        }, {
+            "type": "selector",
+            "tag": "✈️ TelegramDC4",
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+        }, {
+            "type": "selector",
+            "tag": "📺 BiliBili",
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+        }, {
+            "type": "selector",
+            "tag": "🎮 Steam",
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+        }, {
+            "type": "selector",
+            "tag": "☁️ OneDrive",
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+        }, {
+            "type": "selector",
+            "tag": "🐟 FinalProxy",
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+        }, {
+            "type": "urltest",
+            "tag": "✅ AutoSelect",
+            "outbounds": ["{all}"],
+            "url": "https://cp.cloudflare.com",
+            "interval": "5m",
+            "tolerance": 2
+        }, {
+            "type": "direct",
+            "tag": "🎯 Direct"
+        }
+    ],
+    "route": {
+        "rule_set": [{
+                "type": "remote",
+                "tag": "AWAvenue-Ads",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/Paff-77/sing-box-easylist/raw/refs/heads/output/AWAvenue-Ads-Rule.srs",
+                "download_detour": "🎯 Direct",
+                "update_interval": "10m"
+            }, {
+                "type": "remote",
+                "tag": "geosite-category-ai-chat-!cn",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ai-chat-!cn.srs",
+                "download_detour": "🎯 Direct"
+            }, {
+                "type": "remote",
+                "tag": "geosite-apple",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple.srs",
+                "download_detour": "🎯 Direct"
+            }, {
+                "type": "remote",
+                "tag": "geosite-apple-cn",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple@cn.srs",
+                "download_detour": "🎯 Direct"
+            }, {
+                "type": "remote",
+                "tag": "geosite-bilibili",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-bilibili.srs",
+                "download_detour": "🎯 Direct"
+            }, {
+                "type": "remote",
+                "tag": "geosite-steam",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam.srs",
+                "download_detour": "🎯 Direct"
+            }, {
+                "type": "remote",
+                "tag": "geosite-steam-cn",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam@cn.srs",
+                "download_detour": "🎯 Direct"
+            }, {
+                "type": "remote",
+                "tag": "geosite-onedrive",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-onedrive.srs",
+                "download_detour": "🎯 Direct"
+            }, {
+                "type": "remote",
+                "tag": "geosite-geolocation-!cn",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-geolocation-!cn.srs",
+                "download_detour": "🎯 Direct"
+            }, {
+                "type": "remote",
+                "tag": "geosite-cn",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-cn.srs",
+                "download_detour": "🎯 Direct"
+            }, {
+                "type": "remote",
+                "tag": "geoip-cn",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geoip/raw/refs/heads/rule-set/geoip-cn.srs",
+                "download_detour": "🎯 Direct"
+            }
+        ],
+        "rules": [{
+                "inbound": ["tun-in", "mixed-in"],
+                "action": "sniff"
+            }, {
+                "type": "logical",
+                "mode": "or",
+                "rules": [{
+                        "port": 53
+                    }, {
+                        "protocol": "dns"
+                    }
+                ],
+                "action": "hijack-dns"
+            }, {
+                "protocol": ["udp"],
+                "destination_port": [443],
+                "rule_set": [
+                    "geosite-cn"
+                ],
+                "action": "reject"
+            }, {
+                "protocol": ["udp"],
+                "destination_port": [443],
+                "rule_set": [
+                    "geoip-cn"
+                ],
+                "action": "reject"
+            }, {
+                "rule_set": ["AWAvenue-Ads"],
+                "action": "reject"
+            }, {
+                "rule_set": ["geosite-bilibili"],
+                "outbound": "📺 BiliBili"
+            }, {
+                "rule_set": ["geosite-category-ai-chat-!cn"],
+                "outbound": "🤖 GlobalAI"
+            }, {
+                "rule_set": ["geosite-apple", "geosite-apple-cn"],
+                "outbound": "🍎 Apple"
+            }, {
+                "ip_cidr": [
+                    "91.108.16.0/21",
+                    "91.108.56.0/23",
+                    "149.154.168.0/22",
+                    "2001:b28:f23c::/48",
+                    "2001:b28:f23f::/48"
+                ],
+                "outbound": "✈️ TelegramDC5"
+            }, {
+                "ip_cidr": [
+                    "91.108.12.0/22",
+                    "149.154.172.0/22",
+                    "2001:b28:f23d::/48"
+                ],
+                "outbound": "✈️ TelegramDC1"
+            }, {
+                "ip_cidr": [
+                    "5.28.192.0/18",
+                    "91.105.192.0/23",
+                    "91.108.4.0/22",
+                    "91.108.8.0/22",
+                    "91.108.56.0/22",
+                    "95.161.64.0/20",
+                    "109.239.140.0/24",
+                    "149.154.160.0/21",
+                    "185.76.151.0/24",
+                    "2001:67c:4e8::/48",
+                    "2a0a:f280:203::/48"
+                ],
+                "outbound": "✈️ TelegramDC4"
+            }, {
+                "rule_set": ["geosite-steam-cn"],
+                "outbound": "🎯 Direct"
+            }, {
+                "rule_set": ["geosite-steam"],
+                "outbound": "🎮 Steam"
+            }, {
+                "rule_set": ["geosite-onedrive"],
+                "outbound": "☁️ OneDrive"
+            }, {
+                "rule_set": ["geosite-geolocation-!cn"],
+                "outbound": "🐟 FinalProxy"
+            }, {
+                "rule_set": ["geosite-cn"],
+                "outbound": "🎯 Direct"
+            }, {
+                "rule_set": ["geoip-cn"],
+                "outbound": "🎯 Direct"
+            }, {
+                "ip_cidr": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16", "100.64.0.0/10", "127.0.0.0/8"],
+                "outbound": "🎯 Direct"
+            }
+        ],
+        "auto_detect_interface": true
+    },
+    "ntp": {
+        "enabled": true,
+        "server": "time.apple.com",
+        "server_port": 123,
+        "interval": "30m"
+    }
 }
