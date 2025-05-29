@@ -108,35 +108,71 @@
           "tag": "👋 ManualSelect",
           "outbounds": []
       }, {
-          "type": "selector",
           "tag": "🇭🇰 HongKong",
-          "outbounds": [],
-          "filter": "(?i)港|hk|hongkong|hong kong"
-      }, {
           "type": "selector",
-          "tag": "🇨🇳 Taiwan",
-          "outbounds": [],
-          "filter": "(?i)台|tw|taiwan"
+          "outbounds": [
+              "{all}"
+          ],
+          "filter": [{
+                  "action": "include",
+                  "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
+              }
+          ]
       }, {
+          "tag": "🇹🇼 TaiWan",
           "type": "selector",
-          "tag": "🇯🇵 Japan",
-          "outbounds": [],
-          "filter": "(?i)日本|jp|japan"
+          "outbounds": [
+              "{all}"
+          ],
+          "filter": [{
+                  "action": "include",
+                  "keywords": ["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]
+              }
+          ]
       }, {
-          "type": "selector",
-          "tag": "🇺🇸 United States",
-          "outbounds": [],
-          "filter": "(?i)美|us|unitedstates|united states"
-      }, {
-          "type": "selector",
           "tag": "🇸🇬 Singapore",
-          "outbounds": [],
-          "filter": "(?i)(新|sg|singapore)"
-      }, {
           "type": "selector",
+          "outbounds": [
+              "{all}"
+          ],
+          "filter": [{
+                  "action": "include",
+                  "keywords": ["🇸🇬|SG|sg|新加坡|狮|Singapore"]
+              }
+          ]
+      }, {
+          "tag": "🇯🇵 Japan",
+          "type": "selector",
+          "outbounds": [
+              "{all}"
+          ],
+          "filter": [{
+                  "action": "include",
+                  "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]
+              }
+          ]
+      }, {
+          "tag": "🇺🇸 America",
+          "type": "selector",
+          "outbounds": [
+              "{all}"
+          ],
+          "filter": [{
+                  "action": "include",
+                  "keywords": ["🇺🇸|US|us|美国|美|United States"]
+              }
+          ]
+      }, {
           "tag": "🌍 OtherRegions",
-          "outbounds": [],
-          "filter": "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"
+          "type": "selector",
+          "outbounds": [
+              "{all}"
+          ],
+          "filter": [{
+                  "action": "exclude",
+                  "keywords": ["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"]
+              }
+          ]
       }, {
           "type": "selector",
           "tag": "🚫 AdBlock",
@@ -184,12 +220,12 @@
           "url": "https://cp.cloudflare.com",
           "interval": "5m",
           "tolerance": 2
-      },     {
-        "type": "direct",
-        "tag": "🎯 Direct"
-      },     {
-        "type": "block",
-        "tag": "🚫 Block"
+      }, {
+          "type": "direct",
+          "tag": "🎯 Direct"
+      }, {
+          "type": "block",
+          "tag": "🚫 Block"
       }, {
           "type": "dns",
           "tag": "dns-out"
