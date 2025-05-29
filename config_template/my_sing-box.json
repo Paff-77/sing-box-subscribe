@@ -1,0 +1,511 @@
+{
+    "log": {
+      "level": "info",
+      "timestamp": true
+    },
+    "experimental": {
+      "clash_api": {
+        "external_controller": "127.0.0.1:9090",
+        "external_ui": "ui",
+        "store_selected": true,
+        "secret": ""
+      },
+      "cache_file": {
+        "enabled": true,
+        "store_fakeip": true
+      }
+    },
+    "dns": {
+      "servers": [
+        {
+          "tag": "local",
+          "address": "223.5.5.5",
+          "detour": "direct"
+        },
+        {
+          "tag": "local_alt",
+          "address": "119.29.29.29",
+          "detour": "direct"
+        },
+        {
+          "tag": "local_alt2",
+          "address": "114.114.114.114",
+          "detour": "direct"
+        },
+        {
+          "tag": "doh-local",
+          "address": "https://doh.pub/dns-query",
+          "detour": "direct"
+        },
+        {
+          "tag": "doh-alidns",
+          "address": "https://dns.alidns.com/dns-query",
+          "detour": "direct"
+        },
+        {
+          "tag": "cao-taniang",
+          "address": "https://cao.taniang.de/bi",
+          "detour": "🚀 NodeSelect"
+        },
+        {
+          "tag": "fakeip",
+          "address": "fakeip"
+        }
+      ],
+      "rules": [
+        {
+          "domain": ["geosite:cn", "geosite:private"],
+          "server": ["doh-local", "doh-alidns"]
+        },
+        {
+          "domain": ["geosite:geolocation-!cn", "geosite:!cn", "geosite:!private"],
+          "server": "cao-taniang"
+        },
+        {
+          "query_type": ["A", "AAAA"],
+          "server": "fakeip"
+        }
+      ],
+      "fakeip": {
+        "enabled": true,
+        "inet4_range": "28.0.0.1/8"
+      },
+      "strategy": "ipv4_prefer"
+    },
+    "inbounds": [
+      {
+        "type": "tun",
+        "tag": "tun-in",
+        "interface_name": "tun",
+        "stack": "system",
+        "inet4_address": "172.19.0.1/30",
+        "auto_route": true,
+        "strict_route": false,
+        "sniff": true,
+        "sniff_override_destination": true
+      },
+      {
+        "type": "mixed",
+        "tag": "mixed-in",
+        "listen": "::",
+        "listen_port": 7890,
+        "sniff": true,
+        "sniff_override_destination": true
+      }
+    ],
+    "outbounds": [
+      {
+        "type": "selector",
+        "tag": "🚀 NodeSelect",
+        "outbounds": [
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "direct"
+        ]
+      },
+      {
+        "type": "selector",
+        "tag": "👋 ManualSelect",
+        "outbounds": []
+      },
+      {
+        "type": "selector",
+        "tag": "🇭🇰 HongKong",
+        "outbounds": [],
+        "filter": "(?i)港|hk|hongkong|hong kong"
+      },
+      {
+        "type": "selector",
+        "tag": "🇨🇳 Taiwan",
+        "outbounds": [],
+        "filter": "(?i)台|tw|taiwan"
+      },
+      {
+        "type": "selector",
+        "tag": "🇯🇵 Japan",
+        "outbounds": [],
+        "filter": "(?i)日本|jp|japan"
+      },
+      {
+        "type": "selector",
+        "tag": "🇺🇸 United States",
+        "outbounds": [],
+        "filter": "(?i)美|us|unitedstates|united states"
+      },
+      {
+        "type": "selector",
+        "tag": "🇸🇬 Singapore",
+        "outbounds": [],
+        "filter": "(?i)(新|sg|singapore)"
+      },
+      {
+        "type": "selector",
+        "tag": "🌍 OtherRegions",
+        "outbounds": [],
+        "filter": "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"
+      },
+      {
+        "type": "selector",
+        "tag": "🚫 AdBlock",
+        "outbounds": ["block", "direct", "🚀 NodeSelect"]
+      },
+      {
+        "type": "selector",
+        "tag": "🤖 GlobalAI",
+        "outbounds": [
+          "🚀 NodeSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "direct"
+        ]
+      },
+      {
+        "type": "selector",
+        "tag": "🍎 Apple",
+        "outbounds": [
+          "🚀 NodeSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "direct"
+        ]
+      },
+      {
+        "type": "selector",
+        "tag": "✈️ TelegramDC5",
+        "outbounds": [
+          "🚀 NodeSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "direct"
+        ]
+      },
+      {
+        "type": "selector",
+        "tag": "✈️ TelegramDC1",
+        "outbounds": [
+          "🚀 NodeSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "direct"
+        ]
+      },
+      {
+        "type": "selector",
+        "tag": "✈️ TelegramDC4",
+        "outbounds": [
+          "🚀 NodeSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "direct"
+        ]
+      },
+      {
+        "type": "selector",
+        "tag": "📺 BiliBili",
+        "outbounds": [
+          "🚀 NodeSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "direct"
+        ]
+      },
+      {
+        "type": "selector",
+        "tag": "🎮 Steam",
+        "outbounds": [
+          "🚀 NodeSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "direct"
+        ]
+      },
+      {
+        "type": "selector",
+        "tag": "☁️ OneDrive",
+        "outbounds": [
+          "🚀 NodeSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "direct"
+        ]
+      },
+      {
+        "type": "selector",
+        "tag": "🐟 FinalProxy",
+        "outbounds": [
+          "🚀 NodeSelect",
+          "🇭🇰 HongKong",
+          "🇨🇳 Taiwan",
+          "🇯🇵 Japan",
+          "🇸🇬 Singapore",
+          "🇺🇸 United States",
+          "🌍 OtherRegions",
+          "👋 ManualSelect",
+          "✅ AutoSelect",
+          "direct"
+        ]
+      },
+      {
+        "type": "urltest",
+        "tag": "✅ AutoSelect",
+        "outbounds": [],
+        "url": "https://cp.cloudflare.com",
+        "interval": "5m",
+        "tolerance": 2
+      },
+      {
+        "type": "direct",
+        "tag": "direct"
+      },
+      {
+        "type": "block",
+        "tag": "block"
+      },
+      {
+        "type": "dns",
+        "tag": "dns-out"
+      }
+    ],
+    "route": {
+      "rule_set": [
+        {
+          "type": "remote",
+          "tag": "AWAvenue-Ads",
+          "format": "yaml",
+          "url": "https://ghproxy.net/https://github.com/Paff-77/sing-box-easylist/raw/refs/heads/output/AWAvenue-Ads-Rule.srs",
+          "download_detour": "direct",
+          "update_interval": "10m"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-category-ai-chat-!cn",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ai-chat-!cn.srs",
+          "download_detour": "direct"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-apple",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple.srs",
+          "download_detour": "direct"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-apple-cn",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple@cn.srs",
+          "download_detour": "direct"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-bilibili",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-bilibili.srs",
+          "download_detour": "direct"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-steam",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam.srs",
+          "download_detour": "direct"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-steam-cn",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam@cn.srs",
+          "download_detour": "direct"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-onedrive",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-onedrive.srs",
+          "download_detour": "direct"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-geolocation-!cn",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-geolocation-!cn.srs",
+          "download_detour": "direct"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-cn",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-cn.srs",
+          "download_detour": "direct"
+        },
+        {
+          "type": "remote",
+          "tag": "geoip-cn",
+          "format": "binary",
+          "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geoip/raw/refs/heads/rule-set/geoip-cn.srs",
+          "download_detour": "direct"
+        }
+      ],
+      "rules": [
+        {
+          "protocol": "udp",
+          "port": 443,
+          "ip_is_private": false,
+          "rule_set": ["geosite-cn"],
+          "invert": true,
+          "outbound": "block"
+        },
+        {
+          "protocol": "udp",
+          "port": 443,
+          "geoip": "cn",
+          "invert": true,
+          "outbound": "block"
+        },
+        {
+          "rule_set": ["AWAvenue-Ads"],
+          "outbound": "🚫 AdBlock"
+        },
+        {
+          "rule_set": ["geosite-bilibili"],
+          "outbound": "📺 BiliBili"
+        },
+        {
+          "rule_set": ["geosite-category-ai-chat-!cn"],
+          "outbound": "🤖 GlobalAI"
+        },
+        {
+          "rule_set": ["geosite-apple", "geosite-apple-cn"],
+          "outbound": "🍎 Apple"
+        },
+        {
+          "asn": 44907,
+          "outbound": "✈️ TelegramDC5"
+        },
+        {
+          "asn": 62014,
+          "outbound": "✈️ TelegramDC5"
+        },
+        {
+          "asn": 59930,
+          "outbound": "✈️ TelegramDC1"
+        },
+        {
+          "asn": 62041,
+          "outbound": "✈️ TelegramDC4"
+        },
+        {
+          "asn": 211157,
+          "outbound": "✈️ TelegramDC4"
+        },
+        {
+          "ip_cidr": ["5.28.192.0/18"],
+          "outbound": "✈️ TelegramDC4"
+        },
+        {
+          "ip_cidr": ["109.239.140.0/24"],
+          "outbound": "✈️ TelegramDC4"
+        },
+        {
+          "rule_set": ["geosite-steam-cn"],
+          "outbound": "direct"
+        },
+        {
+          "rule_set": ["geosite-steam"],
+          "outbound": "🎮 Steam"
+        },
+        {
+          "rule_set": ["geosite-onedrive"],
+          "outbound": "☁️ OneDrive"
+        },
+        {
+          "rule_set": ["geosite-geolocation-!cn"],
+          "outbound": "🐟 FinalProxy"
+        },
+        {
+          "rule_set": ["geosite-cn"],
+          "outbound": "direct"
+        },
+        {
+          "rule_set": ["geoip-cn"],
+          "outbound": "direct"
+        },
+        {
+          "ip_cidr": [
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "100.64.0.0/10",
+            "127.0.0.0/8"
+          ],
+          "outbound": "direct"
+        },
+        {
+          "type": "fallback",
+          "outbound": "🐟 FinalProxy"
+        }
+      ],
+      "auto_detect_interface": true
+    },
+    "ntp": {
+      "enabled": true,
+      "server": "time.apple.com",
+      "server_port": 123,
+      "interval": "30m"
+    }
+  }
