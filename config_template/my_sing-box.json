@@ -301,7 +301,8 @@
           }, {
               "protocol": "udp",
               "port": 443,
-              "geoip": "cn",
+              "ip_is_private": false,
+              "rule_set": ["geoip-cn"],
               "invert": true,
               "action": "reject"
           }, {
