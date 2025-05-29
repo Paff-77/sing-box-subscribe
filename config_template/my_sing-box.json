@@ -74,23 +74,25 @@
       "independent_cache": true,
       "strategy": "prefer_ipv4"
   },
-  "inbounds": [{
-          "type": "tun",
-          "address": [
-              "172.19.0.1/30",
-              "fdfe:dcba:9876::1/126"
-          ],
-          "route_address": [
-              "0.0.0.0/1",
-              "128.0.0.0/1",
-              "::/1",
-              "8000::/1"
-          ],
-          "route_exclude_address": [
-              "192.168.0.0/16",
-              "fc00::/7"
-          ]
-      }, {
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
+      ],
+      "stack": "system",
+      "auto_route": true,
+      "strict_route": true,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+        }
+      }
+    }, {
           "type": "mixed",
           "tag": "mixed-in",
           "listen": "::",
@@ -304,20 +306,6 @@
                   }
               ],
               "action": "hijack-dns"
-          }, {
-              "protocol": "udp",
-              "port": 443,
-              "ip_is_private": false,
-              "rule_set": ["geosite-cn"],
-              "invert": true,
-              "action": "reject"
-          }, {
-              "protocol": "udp",
-              "port": 443,
-              "ip_is_private": false,
-              "rule_set": ["geoip-cn"],
-              "invert": true,
-              "action": "reject"
           }, {
               "rule_set": ["AWAvenue-Ads"],
               "action": "reject"
