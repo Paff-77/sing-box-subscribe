@@ -26,8 +26,8 @@
           "inet6_range": "fc00::/18"
       },
       "servers": [{
-              "tag": "google",
-              "address": "tls://8.8.8.8",
+              "tag": "doh",
+              "address": "https://cao.taniang.de/bi",
               "detour": "🚀 NodeSelect"
           }, {
               "tag": "local",
@@ -46,7 +46,7 @@
               "server": "local"
           }, {
               "clash_mode": "🌏 Global",
-              "server": "google"
+              "server": "doh"
           }, {
               "query_type": ["A", "AAAA"],
               "rule_set": "geosite-cn",
@@ -64,7 +64,7 @@
                       "rule_set": "geoip-cn"
                   }
               ],
-              "server": "google",
+              "server": "doh",
               "client_subnet": "114.114.114.114/24"
           }, {
               "query_type": ["A", "AAAA"],
@@ -292,6 +292,19 @@
           }
       ],
       "rules": [{
+              "inbound": ["tun-in", "mixed-in"],
+              "action": "sniff"
+          }, {
+              "type": "logical",
+              "mode": "or",
+              "rules": [{
+                      "port": 53
+                  }, {
+                      "protocol": "dns"
+                  }
+              ],
+              "action": "hijack-dns"
+          }, {
               "protocol": "udp",
               "port": 443,
               "ip_is_private": false,
