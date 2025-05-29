@@ -106,7 +106,7 @@
       }, {
           "type": "selector",
           "tag": "👋 ManualSelect",
-          "outbounds": []
+          "outbounds": ["{all}"]
       }, {
           "tag": "🇭🇰 HongKong",
           "type": "selector",
@@ -173,11 +173,7 @@
                   "keywords": ["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"]
               }
           ]
-      }, {
-          "type": "selector",
-          "tag": "🚫 AdBlock",
-          "outbounds": ["block", "direct", "🚀 NodeSelect"]
-      }, {
+      },  {
           "type": "selector",
           "tag": "🤖 GlobalAI",
           "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "direct"]
@@ -223,12 +219,6 @@
       }, {
           "type": "direct",
           "tag": "🎯 Direct"
-      }, {
-          "type": "block",
-          "tag": "🚫 Block"
-      }, {
-          "type": "dns",
-          "tag": "dns-out"
       }
   ],
   "route": {
@@ -307,16 +297,16 @@
               "ip_is_private": false,
               "rule_set": ["geosite-cn"],
               "invert": true,
-              "outbound": "block"
+                "action": "reject"
           }, {
               "protocol": "udp",
               "port": 443,
               "geoip": "cn",
               "invert": true,
-              "outbound": "block"
+                "action": "reject"
           }, {
               "rule_set": ["AWAvenue-Ads"],
-              "outbound": "🚫 AdBlock"
+                "action": "reject"
           }, {
               "rule_set": ["geosite-bilibili"],
               "outbound": "📺 BiliBili"
@@ -327,25 +317,35 @@
               "rule_set": ["geosite-apple", "geosite-apple-cn"],
               "outbound": "🍎 Apple"
           }, {
-              "asn": 44907,
+              "ip_cidr": [
+                  "91.108.16.0/21",
+                  "91.108.56.0/23",
+                  "149.154.168.0/22",
+                  "2001:b28:f23c::/48",
+                  "2001:b28:f23f::/48"
+              ],
               "outbound": "✈️ TelegramDC5"
           }, {
-              "asn": 62014,
-              "outbound": "✈️ TelegramDC5"
-          }, {
-              "asn": 59930,
+              "ip_cidr": [
+                  "91.108.12.0/22",
+                  "149.154.172.0/22",
+                  "2001:b28:f23d::/48"
+              ],
               "outbound": "✈️ TelegramDC1"
           }, {
-              "asn": 62041,
-              "outbound": "✈️ TelegramDC4"
-          }, {
-              "asn": 211157,
-              "outbound": "✈️ TelegramDC4"
-          }, {
-              "ip_cidr": ["5.28.192.0/18"],
-              "outbound": "✈️ TelegramDC4"
-          }, {
-              "ip_cidr": ["109.239.140.0/24"],
+              "ip_cidr": [
+                  "5.28.192.0/18",
+                  "91.105.192.0/23",
+                  "91.108.4.0/22",
+                  "91.108.8.0/22",
+                  "91.108.56.0/22",
+                  "95.161.64.0/20",
+                  "109.239.140.0/24",
+                  "149.154.160.0/21",
+                  "185.76.151.0/24",
+                  "2001:67c:4e8::/48",
+                  "2a0a:f280:203::/48"
+              ],
               "outbound": "✈️ TelegramDC4"
           }, {
               "rule_set": ["geosite-steam-cn"],
@@ -368,9 +368,6 @@
           }, {
               "ip_cidr": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16", "100.64.0.0/10", "127.0.0.0/8"],
               "outbound": "direct"
-          }, {
-              "type": "fallback",
-              "outbound": "🐟 FinalProxy"
           }
       ],
       "auto_detect_interface": true
