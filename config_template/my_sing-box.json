@@ -28,6 +28,7 @@
       "servers": [{
               "tag": "doh",
               "address": "https://cao.taniang.de/bi",
+              "address_resolver": "local",
               "detour": "🚀 NodeSelect"
           }, {
               "tag": "local",
