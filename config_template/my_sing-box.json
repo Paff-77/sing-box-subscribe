@@ -9,7 +9,7 @@
           "external_controller": "127.0.0.1:20123",
           "external_ui": "ui",
           "secret": "ID_ijva201x",
-          "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+          "external_ui_download_url": "https://gh.zakozako.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
           "external_ui_download_detour": "🎯 Direct",
           "default_mode": "rule"
       },
@@ -36,15 +36,9 @@
           }, {
               "tag": "fakeip",
               "address": "fakeip"
-          }, {
-              "tag": "🚫 Block",
-              "address": "rcode://success"
           }
       ],
-      "rules": [{
-              "rule_set": "AWAvenue-Ads",
-              "server": "🚫 Block"
-          }, {
+      "rules": [ {
               "outbound": "any",
               "server": "local"
           }, {
@@ -119,7 +113,7 @@
               }
           ]
       }, {
-          "tag": "🇹🇼 TaiWan",
+          "tag": "🇨🇳 Taiwan",
           "type": "selector",
           "outbounds": [
               "{all}"
@@ -152,7 +146,7 @@
               }
           ]
       }, {
-          "tag": "🇺🇸 America",
+          "tag": "🇺🇸 United States",
           "type": "selector",
           "outbounds": [
               "{all}"
