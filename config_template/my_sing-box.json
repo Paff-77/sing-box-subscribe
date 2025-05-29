@@ -235,69 +235,69 @@
       "rule_set": [{
               "type": "remote",
               "tag": "AWAvenue-Ads",
-              "format": "yaml",
-              "url": "https://ghproxy.net/https://github.com/Paff-77/sing-box-easylist/raw/refs/heads/output/AWAvenue-Ads-Rule.srs",
+              "format": "binary",
+              "url": "https://gh.zakozako.com/https://github.com/Paff-77/sing-box-easylist/raw/refs/heads/output/AWAvenue-Ads-Rule.srs",
               "download_detour": "direct",
               "update_interval": "10m"
           }, {
               "type": "remote",
               "tag": "geosite-category-ai-chat-!cn",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ai-chat-!cn.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ai-chat-!cn.srs",
               "download_detour": "direct"
           }, {
               "type": "remote",
               "tag": "geosite-apple",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple.srs",
               "download_detour": "direct"
           }, {
               "type": "remote",
               "tag": "geosite-apple-cn",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple@cn.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-apple@cn.srs",
               "download_detour": "direct"
           }, {
               "type": "remote",
               "tag": "geosite-bilibili",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-bilibili.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-bilibili.srs",
               "download_detour": "direct"
           }, {
               "type": "remote",
               "tag": "geosite-steam",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam.srs",
               "download_detour": "direct"
           }, {
               "type": "remote",
               "tag": "geosite-steam-cn",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam@cn.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-steam@cn.srs",
               "download_detour": "direct"
           }, {
               "type": "remote",
               "tag": "geosite-onedrive",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-onedrive.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-onedrive.srs",
               "download_detour": "direct"
           }, {
               "type": "remote",
               "tag": "geosite-geolocation-!cn",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-geolocation-!cn.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-geolocation-!cn.srs",
               "download_detour": "direct"
           }, {
               "type": "remote",
               "tag": "geosite-cn",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-cn.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-cn.srs",
               "download_detour": "direct"
           }, {
               "type": "remote",
               "tag": "geoip-cn",
               "format": "binary",
-              "url": "https://ghproxy.net/https://github.com/SagerNet/sing-geoip/raw/refs/heads/rule-set/geoip-cn.srs",
+              "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geoip/raw/refs/heads/rule-set/geoip-cn.srs",
               "download_detour": "direct"
           }
       ],
