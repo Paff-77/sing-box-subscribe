@@ -42,7 +42,7 @@
                 "outbound": "any",
                 "server": "local"
             }, {
-                "clash_mode": "direct",
+                "clash_mode": "🎯 Direct",
                 "server": "local"
             }, {
                 "clash_mode": "🌏 Global",
