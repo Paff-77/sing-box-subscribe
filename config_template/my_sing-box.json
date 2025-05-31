@@ -277,6 +277,12 @@
                 "url": "https://gh.zakozako.com/https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-cn.srs",
                 "download_detour": "🎯 Direct"
             }, {
+                "tag": "geosite-category-ads-all",
+                "type": "remote",
+                "format": "binary",
+                "url": "https://gh.zakozako.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/category-ads-all.srs",
+                "download_detour": "🎯 Direct"
+            }, {
                 "type": "remote",
                 "tag": "geoip-cn",
                 "format": "binary",
@@ -297,6 +303,31 @@
                     }
                 ],
                 "action": "hijack-dns"
+            }, {
+                "rule_set": "geosite-category-ads-all",
+                "clash_mode": "🚀 Rule",
+                "action": "reject"
+            }, {
+                "rule_set": "geosite-category-ads-all",
+                "clash_mode": "🌏 Global",
+                "outbound": "🐟 FinalProxy"
+            }, {
+                "clash_mode": "🎯 Direct",
+                "outbound": "🎯 Direct"
+            }, {
+                "clash_mode": "🌏 Global",
+                "outbound": "🐟 FinalProxy"
+            }, {
+                "domain": [
+                    "clash.razord.top",
+                    "yacd.metacubex.one",
+                    "yacd.haishan.me",
+                    "d.metacubex.one"
+                ],
+                "outbound": "🎯 Direct"
+            }, {
+                "ip_is_private": true,
+                "outbound": "🎯 Direct"
             }, {
                 "protocol": ["udp"],
                 "destination_port": [443],
