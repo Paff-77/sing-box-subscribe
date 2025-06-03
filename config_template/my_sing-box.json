@@ -26,7 +26,7 @@
         },
         "servers": [{
                 "tag": "doh",
-                "address": "https://cao.taniang.de/bi",
+                "address": "https://dns.google/dns-query",
                 "address_resolver": "local",
                 "detour": "🚀 NodeSelect"
             }, {
