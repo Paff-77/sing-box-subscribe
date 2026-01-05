@@ -95,7 +95,7 @@
     "outbounds": [{
             "type": "selector",
             "tag": "🚀 NodeSelect",
-            "outbounds": ["👋 ManualSelect", "✅ AutoSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "🎯 Direct"]
+            "outbounds": ["👋 ManualSelect", "✅ AutoSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "👋 ManualSelect",
@@ -111,18 +111,7 @@
                     "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
                 }
             ]
-        }, {
-            "tag": "🇨🇳 Taiwan",
-            "type": "selector",
-            "outbounds": [
-                "{all}"
-            ],
-            "filter": [{
-                    "action": "include",
-                    "keywords": ["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]
-                }
-            ]
-        }, {
+        },  {
             "tag": "🇸🇬 Singapore",
             "type": "selector",
             "outbounds": [
@@ -169,39 +158,39 @@
         }, {
             "type": "selector",
             "tag": "🤖 GlobalAI",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "🍎 Apple",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "✈️ TelegramDC5",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "✈️ TelegramDC1",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "✈️ TelegramDC4",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong","🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "📺 BiliBili",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "🎮 Steam",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong",  "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "☁️ OneDrive",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong",  "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "🐟 FinalProxy",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇨🇳 Taiwan", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "urltest",
             "tag": "✅ AutoSelect",
