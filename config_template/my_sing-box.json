@@ -111,7 +111,7 @@
                     "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]
                 }
             ]
-        },  {
+        }, {
             "tag": "🇸🇬 Singapore",
             "type": "selector",
             "outbounds": [
@@ -174,7 +174,7 @@
         }, {
             "type": "selector",
             "tag": "✈️ TelegramDC4",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong","🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "📺 BiliBili",
@@ -182,11 +182,11 @@
         }, {
             "type": "selector",
             "tag": "🎮 Steam",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong",  "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "☁️ OneDrive",
-            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong",  "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
+            "outbounds": ["🚀 NodeSelect", "🇭🇰 HongKong", "🇯🇵 Japan", "🇸🇬 Singapore", "🇺🇸 United States", "🌍 OtherRegions", "👋 ManualSelect", "✅ AutoSelect", "🎯 Direct"]
         }, {
             "type": "selector",
             "tag": "🐟 FinalProxy",
